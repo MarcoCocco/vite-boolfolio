@@ -38,7 +38,14 @@ export default {
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ shortDescription }}</p>
-                <a href="#" class="btn btn-primary">Dettagli del progetto</a>
+                <hr>
+                <p>Tipo: <strong>{{ project.type ? project.type.name : 'Non specificato' }}</strong></p>
+                <p>Tecnologie:</p>
+                <p v-if="project.technologies == 0"><strong>Nessuna tecnologia specificata</strong></p>
+                <span v-else v-for="technology in project.technologies" class="badge rounded-pill mb-4 me-2" :style="{backgroundColor: technology.color}">{{ technology.name }}</span>
+                <div class="details">
+                    <a href="#" class="btn btn-primary">Dettagli del progetto</a>
+                </div>
             </div>
         </div>
     </div>
