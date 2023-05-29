@@ -88,8 +88,4 @@ export default {
     justify-content: flex-start;
     width: 100%;
 }
-
-.btn {
-    text-align: center;
-}
 </style>
