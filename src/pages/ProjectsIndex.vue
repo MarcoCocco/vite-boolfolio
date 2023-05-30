@@ -1,10 +1,9 @@
 <script>
-
 import axios from 'axios';
-import AppProjectCard from './AppProjectCard.vue';
+import AppProjectCard from '../components/AppProjectCard.vue';
 
 export default {
-    name: 'AppMain',
+    name: 'ProjectsIndex',
     data() {
         return {
             projects: [],
@@ -49,8 +48,8 @@ export default {
 </script>
 
 <template>
-    <main class="container">
-        <h1 class="text-center p-4">Tutti i progetti</h1>
+    <main class="container py-5">
+        <h1 class="text-center p-4">Tutti i miei progetti</h1>
         <hr>
         <div v-if="projects.length > 0" class="projects pt-2 text-center">
             <div class="row">
@@ -71,7 +70,7 @@ export default {
     </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .loading-screen {
     display: flex;
     justify-content: center;
