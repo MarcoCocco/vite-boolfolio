@@ -39,12 +39,12 @@ export default {
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ shortDescription }}</p>
                 <hr>
-                <p>Tipo: <strong>{{ project.type ? project.type.name : 'Non specificato' }}</strong></p>
+                <p>Tipologia: <strong>{{ project.type ? project.type.name : 'Non specificato' }}</strong></p>
                 <p>Tecnologie:</p>
                 <p v-if="project.technologies == 0"><strong>Nessuna tecnologia specificata</strong></p>
                 <span v-else v-for="technology in project.technologies" class="badge rounded-pill mb-4 me-2" :style="{backgroundColor: technology.color}">{{ technology.name }}</span>
                 <div class="details">
-                    <a href="#" class="btn btn-primary">Dettagli del progetto</a>
+                    <router-link :to="{name: 'projects.show', params: {slug: project.slug}}" class="btn btn-primary">Dettagli del progetto</router-link>
                 </div>
             </div>
         </div>
