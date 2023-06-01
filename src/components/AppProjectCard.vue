@@ -12,14 +12,6 @@ export default {
     },
 
     computed: {
-        shortDescription() {
-            if (this.project.description.length > 100) {
-                return this.project.description.substring(0, 100) + '...';
-            } else {
-                return this.project.description;
-            }
-        },
-
         projectImage() {
             if (this.project.project_image === null) {
                 return 'https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg';
@@ -37,7 +29,6 @@ export default {
             <img :src="projectImage" class="project-image card-img-top" alt="Immagine">
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ shortDescription }}</p>
                 <hr>
                 <p>Tipologia: <strong>{{ project.type ? project.type.name : 'Non specificato' }}</strong></p>
                 <p>Tecnologie:</p>
@@ -54,9 +45,10 @@ export default {
 <style lang="scss" scoped>
 .project.card {
     .project-image {
-        height: 300px;
+        height: 200px;
         object-fit: cover;
         object-position: center;
+        border-bottom: 1px solid gray;
     }
 }
 </style>

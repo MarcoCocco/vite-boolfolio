@@ -40,6 +40,8 @@ export default {
                 } else {
                     this.projectFound = false;
                 }
+
+                document.title = 'Boolfolio - ' + this.project.title;
             });
         }
     }
