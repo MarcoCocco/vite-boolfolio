@@ -69,7 +69,7 @@ export default {
                 <div class="details-container p-4">
                     <p class="description">{{ project.description }}</p>
                     <p>Tipologia di progetto: <strong>{{ project.type ? project.type.name : 'Non specificato' }}</strong></p>
-                    <p class="text-center"><a :href="project.github_link">GitHub</a></p>
+                    <p class="git text-center"><a :href="project.github_link"><i class="fa-brands fa-github"></i></a></p>
                 </div>
             </div>
         </div>
@@ -121,5 +121,9 @@ export default {
         object-position: center;
         opacity: .5;
     }
+}
+
+.git {
+    font-size: 2em;
 }
 </style>
